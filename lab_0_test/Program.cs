@@ -23,6 +23,13 @@ public class ZodiacSignCalculator
 
         string zodiacSign = GetZodiacSign(month, day);
         Console.WriteLine($"Ваш знак зодиака: {zodiacSign}");
+
+        // Добавляем проверку на понедельник и приветствие всем
+        DayOfWeek today = DateTime.Now.DayOfWeek;
+        if (today == DayOfWeek.Monday)
+        {
+            Console.WriteLine("Доброе утро! Желаем удачной недели!");
+        }
     }
 
     private static string GetZodiacSign(int month, int day)
